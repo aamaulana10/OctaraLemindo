@@ -24,8 +24,8 @@ export default class Navigation extends Component {
   render() {
     return (
       <div>
-        <Route path="/" exact component={Welcome} />
-        <Route path="/landingPage" exact component={LandingPage} />
+        <Route path="/" exact component={LandingPage} />
+        <Route path="/admin" exact component={ProductList} />
         <Route path="/product" exact component={ProductList} />
         <Route path="/editProduct/:id" component={EditProduct} />
         <Route path="/createProduct" component={CreateProduct} />

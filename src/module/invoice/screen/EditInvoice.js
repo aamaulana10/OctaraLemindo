@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Header from "../../../components/Header";
+import Menu from "../../../components/Menu";
 import firebase from "../../../helper/Firebase";
 
 class EditInvoice extends Component {
@@ -138,119 +140,123 @@ class EditInvoice extends Component {
 
   render() {
     return (
-      <div className="content-wrapper">
-        {/* Content Header (Page header) */}
-        <section className="content-header"></section>
-        {/* Main content */}
-        <section className="content">
-          <div class="container-fluid">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title">EDIT INVOICE</h3>
-              </div>
-              <div class="panel-body">
-                <h4>
-                  <Link to="/invoice" class="btn btn-primary">
-                    Invoice List
-                  </Link>
-                </h4>
-                <form onSubmit={(e) => this.onSubmit(e)}>
-                  <div className="form-group">
-                    <label>Create At: </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value={this.state.createAt}
-                      onChange={(e) =>
-                        this.setState({ createAt: e.target.value })
-                      }
-                    />
-                  </div>
+      <div>
+        <Header />
+        <Menu />
+        <div className="content-wrapper">
+          {/* Content Header (Page header) */}
+          <section className="content-header"></section>
+          {/* Main content */}
+          <section className="content">
+            <div class="container-fluid">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">EDIT INVOICE</h3>
+                </div>
+                <div class="panel-body">
+                  <h4>
+                    <Link to="/invoice" class="btn btn-primary">
+                      Invoice List
+                    </Link>
+                  </h4>
+                  <form onSubmit={(e) => this.onSubmit(e)}>
+                    <div className="form-group">
+                      <label>Create At: </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        value={this.state.createAt}
+                        onChange={(e) =>
+                          this.setState({ createAt: e.target.value })
+                        }
+                      />
+                    </div>
 
-                  <div className="form-group">
-                    <label>Product</label>
-                    <select
-                      className="form-control select2"
-                      style={{ width: "100%" }}
-                      value={this.state.productId}
-                      onChange={(e) =>
-                        this.setState({ productId: e.target.value })
-                      }
-                    >
-                      {this.state.products.map((product, index) => (
-                        <option selected={product.productId}>
-                          {product.productName}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+                    <div className="form-group">
+                      <label>Product</label>
+                      <select
+                        className="form-control select2"
+                        style={{ width: "100%" }}
+                        value={this.state.productId}
+                        onChange={(e) =>
+                          this.setState({ productId: e.target.value })
+                        }
+                      >
+                        {this.state.products.map((product, index) => (
+                          <option selected={product.productId}>
+                            {product.productName}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
 
-                  <div className="form-group">
-                    <label>Qty: </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value={this.state.qty}
-                      onChange={(e) => this.setState({ qty: e.target.value })}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label>Receiver: </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value={this.state.receiver}
-                      onChange={(e) =>
-                        this.setState({ receiver: e.target.value })
-                      }
-                    />
-                  </div>
+                    <div className="form-group">
+                      <label>Qty: </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        value={this.state.qty}
+                        onChange={(e) => this.setState({ qty: e.target.value })}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label>Receiver: </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        value={this.state.receiver}
+                        onChange={(e) =>
+                          this.setState({ receiver: e.target.value })
+                        }
+                      />
+                    </div>
 
-                  <div className="form-group">
-                    <label>Receiver Address: </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value={this.state.receiverAddress}
-                      onChange={(e) =>
-                        this.setState({ receiverAddress: e.target.value })
-                      }
-                    />
-                  </div>
+                    <div className="form-group">
+                      <label>Receiver Address: </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        value={this.state.receiverAddress}
+                        onChange={(e) =>
+                          this.setState({ receiverAddress: e.target.value })
+                        }
+                      />
+                    </div>
 
-                  <div className="form-group">
-                    <label>Sender: </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value={this.state.sender}
-                      onChange={(e) =>
-                        this.setState({ sender: e.target.value })
-                      }
-                    />
-                  </div>
+                    <div className="form-group">
+                      <label>Sender: </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        value={this.state.sender}
+                        onChange={(e) =>
+                          this.setState({ sender: e.target.value })
+                        }
+                      />
+                    </div>
 
-                  <div className="form-group">
-                    <label>Total Price: </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value={this.state.totalPrice}
-                      onChange={(e) =>
-                        this.setState({ totalPrice: e.target.value })
-                      }
-                    />
-                  </div>
-                  <button type="submit" class="btn btn-success">
-                    Submit
-                  </button>
-                </form>
+                    <div className="form-group">
+                      <label>Total Price: </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        value={this.state.totalPrice}
+                        onChange={(e) =>
+                          this.setState({ totalPrice: e.target.value })
+                        }
+                      />
+                    </div>
+                    <button type="submit" class="btn btn-success">
+                      Submit
+                    </button>
+                  </form>
+                </div>
               </div>
             </div>
-          </div>
-          {/* /.container-fluid */}
-        </section>
-        {/* /.content */}
+            {/* /.container-fluid */}
+          </section>
+          {/* /.content */}
+        </div>
       </div>
     );
   }

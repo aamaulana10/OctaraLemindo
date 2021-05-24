@@ -45,7 +45,7 @@ class LandingPage extends Component {
             <div className="container d-flex align-items-center">
               <h1 className="logo mr-auto">
                 <a href="index.html">
-                  BizLand<span>.</span>
+                  Oktara lemindo<span>.</span>
                 </a>
               </h1>
               {/* Uncomment below if you prefer to use an image logo */}
@@ -67,7 +67,7 @@ class LandingPage extends Component {
                   <li>
                     <a href="#team">Team</a>
                   </li>
-                  <li className="drop-down">
+                  {/* <li className="drop-down">
                     <a href>Drop Down</a>
                     <ul>
                       <li>
@@ -103,7 +103,7 @@ class LandingPage extends Component {
                         <a href="#">Drop Down 4</a>
                       </li>
                     </ul>
-                  </li>
+                  </li> */}
                   <li>
                     <a href="#contact">Contact</a>
                   </li>
@@ -117,7 +117,7 @@ class LandingPage extends Component {
           <section id="hero" className="d-flex align-items-center">
             <div className="container" data-aos="zoom-out" data-aos-delay={100}>
               <h1>
-                Welcome to <span>BizLand</span>
+                Welcome to <span>Oktara Lemindo</span>
               </h1>
               <h2>
                 We are team of talanted designers making websites with Bootstrap
@@ -1110,7 +1110,7 @@ class LandingPage extends Component {
             </section>
             {/* End Team Section */}
             {/* ======= Pricing Section ======= */}
-            <section id="pricing" className="pricing">
+            {/* <section id="pricing" className="pricing">
               <div className="container" data-aos="fade-up">
                 <div className="section-title">
                   <h2>Pricing</h2>
@@ -1222,7 +1222,7 @@ class LandingPage extends Component {
                   </div>
                 </div>
               </div>
-            </section>
+            </section> */}
             {/* End Pricing Section */}
             {/* ======= Frequently Asked Questions Section ======= */}
             <section id="faq" className="faq section-bg">
@@ -1489,7 +1489,7 @@ class LandingPage extends Component {
           {/* End #main */}
           {/* ======= Footer ======= */}
           <footer id="footer">
-            <div className="footer-newsletter">
+            {/* <div className="footer-newsletter">
               <div className="container">
                 <div className="row justify-content-center">
                   <div className="col-lg-6">
@@ -1505,7 +1505,7 @@ class LandingPage extends Component {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="footer-top">
               <div className="container">
                 <div className="row">

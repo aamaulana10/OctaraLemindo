@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import firebase from "../../../helper/Firebase";
 import { Link } from "react-router-dom";
+import Header from "../../../components/Header";
+import Menu from "../../../components/Menu";
 
 class ShowProduct extends Component {
   constructor(props) {
@@ -52,46 +54,50 @@ class ShowProduct extends Component {
 
   render() {
     return (
-      <div className="content-wrapper">
-        {/* Content Header (Page header) */}
-        <section className="content-header"></section>
-        {/* Main content */}
-        <section className="content">
-          <div class="container-fluid">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4>
-                  <Link to="/">Product List</Link>
-                </h4>
-                <h3 class="panel-title">{this.state.product.productName}</h3>
-              </div>
-              <div class="panel-body">
-                <dl>
-                  <dt>Description:</dt>
-                  <dd>{this.state.product.productDescription}</dd>
-                  <dt>Price:</dt>
-                  <dd>{this.state.product.productPrice}</dd>
-                  <dt>Qty:</dt>
-                  <dd>{this.state.product.productQty}</dd>
-                </dl>
-                <Link
-                  to={`/editProduct/${this.state.key}`}
-                  class="btn btn-success"
-                >
-                  Edit
-                </Link>
-                &nbsp;
-                <button
-                  onClick={() => this.delete(this.state.key)}
-                  class="btn btn-danger"
-                >
-                  Delete
-                </button>
+      <div>
+        <Header />
+        <Menu />
+        <div className="content-wrapper">
+          {/* Content Header (Page header) */}
+          <section className="content-header"></section>
+          {/* Main content */}
+          <section className="content">
+            <div class="container-fluid">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4>
+                    <Link to="/">Product List</Link>
+                  </h4>
+                  <h3 class="panel-title">{this.state.product.productName}</h3>
+                </div>
+                <div class="panel-body">
+                  <dl>
+                    <dt>Description:</dt>
+                    <dd>{this.state.product.productDescription}</dd>
+                    <dt>Price:</dt>
+                    <dd>{this.state.product.productPrice}</dd>
+                    <dt>Qty:</dt>
+                    <dd>{this.state.product.productQty}</dd>
+                  </dl>
+                  <Link
+                    to={`/editProduct/${this.state.key}`}
+                    class="btn btn-success"
+                  >
+                    Edit
+                  </Link>
+                  &nbsp;
+                  <button
+                    onClick={() => this.delete(this.state.key)}
+                    class="btn btn-danger"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-        {/* /.content */}
+          </section>
+          {/* /.content */}
+        </div>
       </div>
     );
   }

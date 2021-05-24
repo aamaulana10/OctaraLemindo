@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Header from "../../../components/Header";
+import Menu from "../../../components/Menu";
 import firebase from "../../../helper/Firebase";
 export default class ProductList extends Component {
   constructor(props) {
@@ -75,101 +77,105 @@ export default class ProductList extends Component {
 
   render() {
     return (
-      <div className="content-wrapper">
-        {/* Content Header (Page header) */}
-        <section className="content-header"></section>
-        {/* Main content */}
-        <section className="content">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-12">
-                <div className="card">
-                  <div className="card-header">
-                    <h3 className="card-title">Data produk</h3>
-                  </div>
-                  {/* /.card-header */}
-                  <div className="card-body">
-                    <table
-                      id="example2"
-                      className="table table-bordered table-hover"
-                    >
-                      <thead>
-                        <tr>
-                          <th>No</th>
-                          <th>Name</th>
-                          <th>Description</th>
-                          <th>Price</th>
-                          <th>Qty</th>
-                          <th>Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {this.state.products.map((product, index) => (
-                          <tr>
-                            <td>
-                              <Link to={`/showProduct/${product.key}`}>
-                                {index + 1}
-                              </Link>
-                            </td>
-                            <td>{product.productName}</td>
-                            <td>{product.productDescription}</td>
-                            <td>{product.productPrice}</td>
-                            <td>{product.productQty}</td>
-                            <td>
-                              <Link
-                                to={`/showProduct/${product.key}`}
-                                class="btn btn-info btn-sm"
-                              >
-                                <i class="fas fa-eye"></i>
-                              </Link>
-
-                              <Link
-                                to={`/editProduct/${product.key}`}
-                                class="btn btn-warning btn-sm"
-                              >
-                                <i class="fas fa-pencil-alt"></i>
-                              </Link>
-                              <a
-                                href="#"
-                                class="btn btn-danger btn-sm"
-                                onClick={(e) => {
-                                  if (
-                                    window.confirm(
-                                      "Are you sure you wish to delete this item?"
-                                    )
-                                  )
-                                    this.delete(product.key);
-                                }}
-                              >
-                                <i class="fas fa-trash-alt"></i>
-                              </a>
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-
-                    <row>
-                      <Link
-                        to="/createProduct"
-                        href="pages/widgets.html"
-                        className="nav-link"
+      <div>
+        <Header />
+        <Menu />
+        <div className="content-wrapper">
+          {/* Content Header (Page header) */}
+          <section className="content-header"></section>
+          {/* Main content */}
+          <section className="content">
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-12">
+                  <div className="card">
+                    <div className="card-header">
+                      <h3 className="card-title">Data produk</h3>
+                    </div>
+                    {/* /.card-header */}
+                    <div className="card-body">
+                      <table
+                        id="example2"
+                        className="table table-bordered table-hover"
                       >
-                        <p>Create new product</p>
-                      </Link>
-                    </row>
+                        <thead>
+                          <tr>
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {this.state.products.map((product, index) => (
+                            <tr>
+                              <td>
+                                <Link to={`/showProduct/${product.key}`}>
+                                  {index + 1}
+                                </Link>
+                              </td>
+                              <td>{product.productName}</td>
+                              <td>{product.productDescription}</td>
+                              <td>{product.productPrice}</td>
+                              <td>{product.productQty}</td>
+                              <td>
+                                <Link
+                                  to={`/showProduct/${product.key}`}
+                                  class="btn btn-info btn-sm"
+                                >
+                                  <i class="fas fa-eye"></i>
+                                </Link>
+
+                                <Link
+                                  to={`/editProduct/${product.key}`}
+                                  class="btn btn-warning btn-sm"
+                                >
+                                  <i class="fas fa-pencil-alt"></i>
+                                </Link>
+                                <a
+                                  href="#"
+                                  class="btn btn-danger btn-sm"
+                                  onClick={(e) => {
+                                    if (
+                                      window.confirm(
+                                        "Are you sure you wish to delete this item?"
+                                      )
+                                    )
+                                      this.delete(product.key);
+                                  }}
+                                >
+                                  <i class="fas fa-trash-alt"></i>
+                                </a>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+
+                      <row>
+                        <Link
+                          to="/createProduct"
+                          href="pages/widgets.html"
+                          className="nav-link"
+                        >
+                          <p>Create new product</p>
+                        </Link>
+                      </row>
+                    </div>
+                    {/* /.card-body */}
                   </div>
-                  {/* /.card-body */}
+                  {/* /.card */}
                 </div>
-                {/* /.card */}
+                {/* /.col */}
               </div>
-              {/* /.col */}
+              {/* /.row */}
             </div>
-            {/* /.row */}
-          </div>
-          {/* /.container-fluid */}
-        </section>
-        {/* /.content */}
+            {/* /.container-fluid */}
+          </section>
+          {/* /.content */}
+        </div>
       </div>
     );
   }
